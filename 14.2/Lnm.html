@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Latifah ❤️</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Confetti -->
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+
+  <style>
+    html, body {
+      height: 100%;
+    }
+
+    body {
+      margin: 0;
+      background:
+        linear-gradient(135deg, rgba(255,117,140,0.55), rgba(255,126,179,0.55)),
+        url('lnm.jpeg') center/cover no-repeat;
+      background-attachment: fixed;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: "Segoe UI", sans-serif;
+      overflow: hidden;
+    }
+
+    .card {
+      background: rgba(255,255,255,0.92);
+      padding: 35px 40px;
+      border-radius: 20px;
+      text-align: center;
+      width: 90%;
+      max-width: 420px;
+      box-shadow: 0 15px 35px rgba(0,0,0,0.25);
+      animation: pop 0.9s ease;
+      position: relative;
+    }
+
+    @keyframes pop {
+      0% { transform: scale(0.7); opacity: 0; }
+      100% { transform: scale(1); opacity: 1; }
+    }
+
+    h1 {
+      color: #e60073;
+      margin-bottom: 10px;
+    }
+
+    p {
+      font-size: 18px;
+      margin-bottom: 22px;
+    }
+
+    button {
+      padding: 12px 22px;
+      font-size: 16px;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      margin: 10px;
+    }
+
+    .yes {
+      background: #e60073;
+      color: white;
+    }
+
+    .no {
+      background: #ddd;
+      position: absolute;
+      right: 18px;
+      top: 18px;
+      transition: left 0.12s ease, top 0.12s ease;
+    }
+
+    #message {
+      margin-top: 22px;
+      font-size: 18px;
+      color: #e60073;
+      font-weight: bold;
+    }
+
+    .attribution {
+      position: fixed;
+      left: 12px;
+      bottom: 12px;
+      font-size: 12px;
+      color: #fff;
+      background: rgba(0,0,0,0.36);
+      padding: 6px 8px;
+      border-radius: 6px;
+      backdrop-filter: blur(4px);
+    }
+
+    .attribution a { color: #fff; text-decoration: underline; }
+  </style>
+</head>
+<body>
+
+  <!-- Background music -->
+  <audio autoplay loop>
+    <source src="https://www.bensound.com/bensound-music/bensound-love.mp3" type="audio/mpeg">
+  </audio>
+
+  <div class="card">
+    <h1>Hey Latifah ❤️</h1>
+    <p>I've been thinking about you …</p>
+    <p>So I had to ask — will you be my Valentine? 💕</p>
+
+    <button class="yes" onclick="sayYes()">Yes 💖</button>
+    <button class="no" id="noBtn">No 🙈</button>
+
+    <div id="message"></div>
+  </div>
+
+  <script>
+    const noBtn = document.getElementById("noBtn");
+
+    noBtn.addEventListener("mouseover", () => {
+      const x = Math.random() * (window.innerWidth - 120);
+      const y = Math.random() * (window.innerHeight - 60);
+      noBtn.style.left = x + "px";
+      noBtn.style.top = y + "px";
+    });
+
+    function sayYes() {
+      document.getElementById("message").innerText =
+        "I love you Latifah, you just made my day ❤️🥰";
+
+      confetti({
+        particleCount: 180,
+        spread: 80,
+        origin: { y: 0.6 }
+      });
+    }
+  </script>
+</body>
+
+  <footer class="attribution">Music: "Love" by <a href="https://www.bensound.com" target="_blank" rel="noopener">Bensound</a> — used under their free license (attribution required).</footer>
+
+</body>
+</html>
